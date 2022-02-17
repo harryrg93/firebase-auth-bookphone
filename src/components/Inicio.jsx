@@ -86,7 +86,8 @@ const Inicio = () => {
          await updateDoc(refDoc, person);
          console.log('update success');
       } catch (e) {
-         console.log(e);
+         console.error('Error updating document: ', e);
+         setError('Missing or insufficient permissions. Need Login');
       }
       getAgenda();
       setUpdateMode(false);
